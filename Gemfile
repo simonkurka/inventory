@@ -17,7 +17,8 @@ gem 'therubyracer', platforms: :ruby
 # User Management
 gem 'devise', '~> 3.5.1'
 # Barcodes
-gem 'barcodes'
+gem 'barby', '~> 0.6.2'
+gem 'cairo', '~> 1.14.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

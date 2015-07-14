@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :items
-  resources :items
-  resources :items
-  resources :items
   devise_for :users
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.

@@ -13,10 +13,9 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html
       format.json
-      format.pdf do
-        pdf = Barcodes::Renderer::Pdf.new(Barcodes.create('Code 39 Mod 43', {:data => @item.code})).render()
-        render body: pdf, content_type: 'application/pdf'
-      end
+      format.pdf { render body: get_barcode.to_pdf, content_type: 'application/pdf' }
+      format.svg { render body: get_barcode.to_svg, content_type: 'image/svg+xml' }
+      format.png { render body: get_barcode.to_png, content_type: 'image/png' }
     end
   end
 
@@ -78,5 +77,14 @@ class ItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:code, :name, :description)
+    end
+
+    def get_barcode
+      require 'barby'
+      require 'barby/barcode/code_39'
+      require 'barby/outputter/cairo_outputter'
+      barcode = Barby::Code39.new(@item.id.to_s(36).upcase.rjust(4, '0'))
+      barcode.include_checksum = true
+      barcode
     end
 end
