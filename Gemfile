@@ -19,6 +19,13 @@ gem 'devise', '~> 3.5.1'
 # Barcodes
 gem 'barby', '~> 0.6.2'
 gem 'cairo', '~> 1.14.1'
+# Bootstrap-Sass
+gem 'bootstrap-sass', '~> 3.3.5'
+# active_link_to
+gem 'active_link_to'
+
+# Tree Structures
+gem 'ancestry'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,3 @@
+<% if ! user_signed_in? %>
+  <%= active_link_to "Sign up", new_user_registration_path, :wrap_tag => :li %>
+<% end %>
