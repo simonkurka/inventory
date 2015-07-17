@@ -16,3 +16,17 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+main {
+  margin-top: ($navbar-height + $navbar-margin-bottom);
+}
+
+.devise-container {
+  .panel {
+    max-width: 330px;
+    margin: auto;
+  }
+  .shared-links {
+    margin-top: 15px;
+  }
+}

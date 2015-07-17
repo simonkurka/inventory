@@ -7,42 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" 
-aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Inventory", root_path, id: "logo", class: "navbar-brand" %>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <%= active_link_to "Home", root_path, :wrap_tag => :li, :active => :exclusive %>
-        <%= active_link_to "Items", items_path, :wrap_tag => :li %>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="input-group">
-          <span class="input-group-addon" id="search-addon"><span class="glyphicon glyphicon-search"></span></span>
-          <input type="search" class="form-control" placeholder="Search..." aria-describedby="search-addon">
-        </div>
-      </form>
-    </div>
-  </div>
-</nav>
-
-<div class="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
-</div>
-
+  <header class="navbar navbar-default navbar-fixed-top">
+    <nav class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Inventory", root_path, id: "logo", class: "navbar-brand" %>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <%= active_link_to "Home", root_path, :wrap_tag => :li, :active => :exclusive %>
+          <%= active_link_to "Items", items_path, :wrap_tag => :li %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="input-group">
+            <span class="input-group-addon" id="search-addon"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="search" class="form-control" placeholder="Search..." aria-describedby="search-addon">
+          </div>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+  </main>
 </body>
 </html>
