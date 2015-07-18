@@ -23,10 +23,16 @@
           <%= active_link_to "Home", root_path, :wrap_tag => :li, :active => :exclusive %>
           <%= active_link_to "Items", items_path, :wrap_tag => :li %>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <%= render 'devise/menu/registration_items' %>
-          <%= render 'devise/menu/login_items' %>
-        </ul>
+        <div class="nav navbar-form navbar-right">
+          <% if ! user_signed_in? %>
+            <%= active_link_to "Sign up", new_user_registration_path, :class => "btn btn-primary" %>
+          <% end %>
+          <% if user_signed_in? %>
+            <%= active_link_to "Sign out", destroy_user_session_path, :class => "btn btn-danger", :method => :delete %>
+          <% else %>
+            <%= active_link_to "Sign in", new_user_session_path, :class => "btn btn-success" %>
+          <% end %>
+        </div>
         <form class="navbar-form navbar-right">
           <div class="input-group">
             <span class="input-group-addon" id="search-addon"><span class="glyphicon glyphicon-search"></span></span>
