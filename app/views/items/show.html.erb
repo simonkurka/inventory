@@ -1,14 +1,48 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<div class="row">
+  <div class="col-xs-12">
+    <ol class="breadcrumb">
+      <% @item.ancestors.each do |item| %>
+        <li><%= link_to item.name, item %></li>
+      <% end %>
+      <li class="active"><%= @item.name %></li>
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><%= @item.name %></h4>
+      </div>
+      <div class="panel-body">
+        <%= @item.description %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><%= t('.label', :default => "Label") %></h4>
+      </div>
+      <div class="panel-body">
+        <%= link_to item_path @item, :format => :pdf do %>
+          <%= image_tag item_path @item, :format => :png %>
+        <% end %>
+      </div>
+    </div>
+    <% if ! @item.is_childless? %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><%= t('.children', :default => "Children") %></h4>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <% @item.children.each do |item| %>
+              <%= link_to item.name, item, class: 'list-group-item' %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
