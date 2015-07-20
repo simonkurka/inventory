@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t.('.inventory', :default => "Inventory") %></title>
+  <title><%= t('.inventory', :default => "Inventory") %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,32 +11,32 @@
     <nav class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">t.('.toggle-navigation', :default => "Toggle navigation")</span>
+          <span class="sr-only">t('.toggle-navigation', :default => "Toggle navigation")</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to t.('.inventory', :default => "Inventory"), root_path, id: "logo", class: "navbar-brand" %>
+        <%= link_to t('.inventory', :default => "Inventory"), root_path, id: "logo", class: "navbar-brand" %>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <%= active_link_to t.('.home', :default => "Home"), root_path, :wrap_tag => :li, :active => :exclusive %>
-          <%= active_link_to t.('.items', :default => "Items"), items_path, :wrap_tag => :li %>
+          <%= active_link_to t('.home', :default => "Home"), root_path, :wrap_tag => :li, :active => :exclusive %>
+          <%= active_link_to t('.items', :default => "Items"), items_path, :wrap_tag => :li %>
         </ul>
         <div class="nav navbar-form navbar-right">
           <% if ! user_signed_in? %>
-            <%= active_link_to t.('.signup', :default => "Sign up"), new_user_registration_path, :class => "btn btn-primary" %>
+            <%= active_link_to t('.signup', :default => "Sign up"), new_user_registration_path, :class => "btn btn-primary" %>
           <% end %>
           <% if user_signed_in? %>
-            <%= active_link_to t.('.signout', :default => "Sign out"), destroy_user_session_path, :class => "btn btn-danger", :method => :delete %>
+            <%= active_link_to t('.signout', :default => "Sign out"), destroy_user_session_path, :class => "btn btn-danger", :method => :delete %>
           <% else %>
-            <%= active_link_to t.('.signin', :default => "Sign in"), new_user_session_path, :class => "btn btn-success" %>
+            <%= active_link_to t('.signin', :default => "Sign in"), new_user_session_path, :class => "btn btn-success" %>
           <% end %>
         </div>
         <form class="navbar-form navbar-right">
           <div class="input-group">
             <span class="input-group-addon" id="search-addon"><span class="glyphicon glyphicon-search"></span></span>
-            <input type="search" class="form-control" placeholder="<%= t.('.searchdots', :default => "Search…") %>" aria-describedby="search-addon">
+            <input type="search" class="form-control" placeholder="<%= t('.searchdots', :default => "Search…") %>" aria-describedby="search-addon">
           </div>
         </form>
       </div>

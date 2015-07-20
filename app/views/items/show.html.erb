@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12">
     <ol class="breadcrumb">
-      <li><%= link_to t.('.items', :default => "Items"), items_path %></li>
+      <li><%= link_to t('.items', :default => "Items"), items_path %></li>
       <% @item.ancestors.each do |item| %>
         <li><%= link_to item.name, item %></li>
       <% end %>
