@@ -27,6 +27,9 @@ gem 'active_link_to'
 # Tree Structures
 gem 'ancestry'
 
+# LaTeX=>PDF
+gem 'rails-latex'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
