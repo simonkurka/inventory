@@ -45,5 +45,18 @@
         </div>
       </div>
     <% end %>
+    <div class="col-xs-12 col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Lables(LaTeX)</h4>
+        </div>
+        <div class="panel-body">
+          <%= link_to "BigLable",lableBig_item_path(@item, :format => :pdf) %>
+          <%= link_to "SmallLable",lableSmall_item_path(@item, :format => :pdf) %>
+        </div>
+        
+      </div>
+      
+    </div>
   </div>
 </div>

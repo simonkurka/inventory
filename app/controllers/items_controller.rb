@@ -67,6 +67,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def lableBig
+    @item = Item.find(params[:id])
+  end
+
+  def lableSmall
+    @item = Item.find(params[:id])
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
@@ -146,4 +153,5 @@ class ItemsController < ApplicationController
       io.rewind
       io.read
     end
+
 end

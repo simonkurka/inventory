@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage[paperwidth=57mm,paperheight=32mm,nohead,nofoot,margin=5mm]{geometry}
+\usepackage{tabu,graphicx,xcolor} 
+\usepackage{pst-barcode}
+\usepackage{auto-pst-pdf}
+\pagestyle{empty}
+
+\begin{document}
+\centering
+\begin{tabular}{lr}
+\includegraphics[height=0.7\paperheight]{../../../public/img/logo_sjr_vektor_hoch}
+
+\begin{pspicture}
+\psbarcode{<%= "%04d" % @item.id %>}{includetext includecheck  includecheckintext height=0.75 width=1}{code39}
+\end{pspicture}
+\end{tabular}
+\end{document}
