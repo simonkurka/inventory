@@ -8,13 +8,18 @@
 \usepackage{auto-pst-pdf}
 \pagestyle{empty}
 
+\newcommand{\barcodelabel}[1]{
+	\centering
+	\begin{tabular}{lr}
+		\includegraphics[height=0.7\paperheight]{../../../public/img/logo_sjr_vektor_hoch}
+		
+		\begin{pspicture}
+		\psbarcode{#1}{includetext includecheck  includecheckintext height=0.7}{code39}
+		\end{pspicture}
+	\end{tabular}
+	\clearpage
+	}
+
 \begin{document}
-\centering
-\begin{tabular}{lr}
-\includegraphics[height=0.82\paperheight]{../../../public/img/logo_sjr_vektor_hoch}
-&
-\begin{pspicture}
-\psbarcode{<%= "%04d" % @item.id %>}{includetext includecheck  includecheckintext height=0.7}{code39}
-\end{pspicture}
-\end{tabular}
+\barcodelabel{<%= "%04d" % @item.id %>}
 \end{document}
