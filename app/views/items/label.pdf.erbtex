@@ -1,24 +1,45 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[german]{babel}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
 \usepackage[paperwidth=<%= params[:width] %>mm,paperheight=<%= params[:height] %>mm,nohead,nofoot,margin=5mm]{geometry}
-\usepackage{tabu,graphicx,xcolor} 
+\usepackage{fp,tabu,graphicx,xcolor}
 \usepackage{pst-barcode}
 \usepackage{auto-pst-pdf}
 \pagestyle{empty}
 
+\makeatletter
+\newcommand*{\strippt}[1]{\strip@pt#1}
+\makeatother
+\newlength{\inch}
+\setlength{\inch}{1in}
+\newlength{\barcodewidthlen}
+\newlength{\barcodeheightlen}
+\newlength{\rooturlsize}
+\newsavebox{\rooturl}
+\savebox{\rooturl}{\scriptsize <%= root_url %>}
+\settoheight{\rooturlsize}{\usebox{\rooturl}}
+
 \newcommand{\barcodelabel}[1]{
+	\setlength{\barcodeheightlen}{\textheight}
 	\centering
-	\begin{tabular}{lr}
-		\includegraphics[height=\textheight]{../../../public/img/logo_sjr_vektor_hoch}
-		
+	\raggedleft{\usebox{\rooturl}}\\
+	\addtolength{\barcodeheightlen}{-\rooturlsize}\addtolength{\barcodeheightlen}{-\baselineskip}
+	\begin{tabu} to \textwidth {X[1,c,m]X[1,c,m]}
+		\includegraphics[width=\linewidth,height=\barcodeheightlen,keepaspectratio]{../../../public/img/logo_sjr_vektor_hoch}
+		&
+		\setlength{\barcodewidthlen}{\linewidth}
+		\addtolength{\barcodewidthlen}{-5mm}
+		\addtolength{\barcodeheightlen}{-1em}
+		\FPdiv\barcodeWidth{\strippt{\barcodewidthlen}}{\strippt{\inch}}
+		\FPdiv\barcodeHeight{\strippt{\barcodeheightlen}}{\strippt{\inch}}
 		\begin{pspicture}
-		\psbarcode{#1}{includetext includecheck includecheckintext height=0.7}{code39}
+			\psbarcode{#1}{includetext includecheck width=\barcodeWidth\ height=\barcodeHeight}{code39}
 		\end{pspicture}
-	\end{tabular}
+	\end{tabu}
 	\clearpage
-	}
+}
 
 \begin{document}
 \barcodelabel{<%= "%04d" % @item.id %>}
