@@ -1,5 +1,5 @@
 <div class="list-group">
   <% @items.roots.each do |item| %>
-    <%= link_to item.name, item, class: 'list-group-item' %>
+  	<div class="list-group-item"><%= item.name %> <%= link_to 'Details', item %></div>
   <% end %>
 </div>
