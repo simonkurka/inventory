@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage[paperwidth=<%= params[:width] %>mm,paperheight=<%= params[:height] %>mm,nohead,nofoot,margin=5mm]{geometry}
+\usepackage{tabu,graphicx,xcolor} 
+\usepackage{pst-barcode}
+\usepackage{auto-pst-pdf}
+\pagestyle{empty}
+
+\newcommand{\barcodelabel}[1]{
+	\centering
+	\begin{tabular}{lr}
+		\includegraphics[height=\textheight]{../../../public/img/logo_sjr_vektor_hoch}
+		
+		\begin{pspicture}
+		\psbarcode{#1}{includetext includecheck includecheckintext height=0.7}{code39}
+		\end{pspicture}
+	\end{tabular}
+	\clearpage
+	}
+
+\begin{document}
+\barcodelabel{<%= "%04d" % @item.id %>}
+\end{document}
