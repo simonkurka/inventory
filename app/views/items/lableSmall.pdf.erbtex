@@ -14,7 +14,7 @@
 		\includegraphics[height=0.7\paperheight]{../../../public/img/logo_sjr_vektor_hoch}
 		
 		\begin{pspicture}
-		\psbarcode{#1}{includetext includecheck  includecheckintext height=0.75 width=1}{code39}
+		\psbarcode{#1}{includetext includecheck includecheckintext height=0.75 width=1}{code39}
 		\end{pspicture}
 	\end{tabular}
 	\clearpage
