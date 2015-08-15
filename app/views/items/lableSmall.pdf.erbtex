@@ -11,7 +11,7 @@
 \newcommand{\barcodelabel}[1]{
 	\centering
 	\begin{tabular}{lr}
-		\includegraphics[height=0.7\paperheight]{../../../public/img/logo_sjr_vektor_hoch}
+		\includegraphics[height=\textheight]{../../../public/img/logo_sjr_vektor_hoch}
 		
 		\begin{pspicture}
 		\psbarcode{#1}{includetext includecheck includecheckintext height=0.75 width=1}{code39}
