@@ -26,8 +26,8 @@
         <h4><%= t('.label', :default => "Label") %></h4>
       </div>
       <div class="panel-body">
-        <%= link_to "BigLable",lableBig_item_path(@item, :format => :pdf) %> <br/>
-        <%= link_to "SmallLable",lableSmall_item_path(@item, :format => :pdf) %>
+        <%= link_to "BigLabel",label_item_path(@item, :width => 101, :height => 54, :format => :pdf) %> <br/>
+        <%= link_to "SmallLabel",label_item_path(@item, :width=> 57, :height => 32, :format => :pdf) %>
       </div>
     </div>
     <% if ! @item.is_childless? %>

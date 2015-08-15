@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[german]{babel}
-\usepackage[paperwidth=<%= params[:width]%>mm,paperheight=<%= params[:height]%>mm,nohead,nofoot,margin=5mm]{geometry}
+\usepackage[paperwidth=<%= params[:width] %>mm,paperheight=<%= params[:height] %>mm,nohead,nofoot,margin=5mm]{geometry}
 \usepackage{tabu,graphicx,xcolor} 
 \usepackage{pst-barcode}
 \usepackage{auto-pst-pdf}
