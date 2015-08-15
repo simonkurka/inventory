@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items do
     member do
-      get 'lableBig'
-      get 'lableSmall'
+      get 'label/:width/:height', :action => 'label', :as =>'label'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

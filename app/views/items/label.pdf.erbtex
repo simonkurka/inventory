@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[german]{babel}
-\usepackage[paperwidth=57mm,paperheight=32mm,nohead,nofoot,margin=5mm]{geometry}
+\usepackage[paperwidth=<%= params[:width]%>mm,paperheight=<%= params[:height]%>mm,nohead,nofoot,margin=5mm]{geometry}
 \usepackage{tabu,graphicx,xcolor} 
 \usepackage{pst-barcode}
 \usepackage{auto-pst-pdf}
@@ -14,7 +14,7 @@
 		\includegraphics[height=\textheight]{../../../public/img/logo_sjr_vektor_hoch}
 		
 		\begin{pspicture}
-		\psbarcode{#1}{includetext includecheck includecheckintext height=0.75 width=1}{code39}
+		\psbarcode{#1}{includetext includecheck includecheckintext height=0.7}{code39}
 		\end{pspicture}
 	\end{tabular}
 	\clearpage
