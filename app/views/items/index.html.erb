@@ -1,5 +1,5 @@
 <div class="list-group">
   <% @items.roots.each do |item| %>
-  	<div class="list-group-item" onclick="select(this);"><%= item.name %> <%= link_to 'Details', item %></div>
+  	<div class="list-group-item" onclick="select(this);" data-selected=false><%= item.name %> <%= link_to 'Details', item %></div>
   <% end %>
 </div>
