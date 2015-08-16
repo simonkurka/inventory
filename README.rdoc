@@ -1,4 +1,4 @@
-== README [![Build Status](https://drone.io/github.com/simonkurka/inventory/status.png)](https://drone.io/github.com/simonkurka/inventory/latest) [![Dependency Status](https://gemnasium.com/simonkurka/inventory.svg)](https://gemnasium.com/simonkurka/inventory)
+== README {https://drone.io/github.com/simonkurka/inventory/status.png}(https://drone.io/github.com/simonkurka/inventory/latest) {https://gemnasium.com/simonkurka/inventory.svg)}(https://gemnasium.com/simonkurka/inventory)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
