@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+function select (element){
+	if (element.dataset.selected == "true") {
+		element.style.backgroundColor='#FFFFFF';
+		element.dataset.selected = "false";
+	} else {
+		element.style.backgroundColor='#D4D4D4';
+		element.dataset.selected = "true";
+	};
+}
