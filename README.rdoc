@@ -1,4 +1,4 @@
-== README {rdoc-image:https://drone.io/github.com/simonkurka/inventory/status.png}(https://drone.io/github.com/simonkurka/inventory/latest) {rdoc-image:https://gemnasium.com/simonkurka/inventory.svg)}(https://gemnasium.com/simonkurka/inventory)
+== README {<img src="https://drone.io/github.com/simonkurka/inventory/status.png" alt="Build Status"/>}(https://drone.io/github.com/simonkurka/inventory/latest) {<img src="https://gemnasium.com/simonkurka/inventory.svg" alt="Dependency Status" />}(https://gemnasium.com/simonkurka/inventory)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
