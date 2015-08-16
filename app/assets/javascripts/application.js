@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+function select (element){
+	if ($(element).css('backgroundColor') == "rgb(212, 212, 212)") {
+		element.style.backgroundColor='#FFFFFF';
+		element.dataset.slected = false
+	} else {
+		element.style.backgroundColor='#D4D4D4';
+		element.dataset.slected = true
+	};
+}

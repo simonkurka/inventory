@@ -38,7 +38,7 @@
         <div class="panel-body">
           <ul class="list-group">
             <% @item.children.each do |item| %>
-              <div class="list-group-item"><%= item.name %> <%= link_to 'Details', item %></div>
+              <div class="list-group-item" onclick="this.style.backgroundColor='#FFFFFF'"><%= item.name %> <%= link_to 'Details', item %></div>
             <% end %>
           </ul>
         </div>
