@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 
 # User Management
-gem 'devise', '~> 3.5.1'
+gem 'devise', '~> 3.5.2'
 # Bootstrap-Sass
 gem 'bootstrap-sass', '~> 3.3.5'
 # active_link_to
