@@ -3,18 +3,16 @@ language: ruby
 rvm:
  - 2.1.0
 
-node_js:
- - "0.12"
-
 before_install:
+ - curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -
  - sudo apt-get update -qq
- - sudo apt-get install -qq npm
+ - sudo apt-get install -qq npm nodejs
 
 before_script:
  - npm install -g ember-cli
+ - (cd rails && bundle install)
+ - (cd ember && npm install)
 
 script:
- - (cd rails && bundle install)
  - (cd rails && bundle exec rake)
- - (cd ember && npm install)
  - (cd ember && ember test)
