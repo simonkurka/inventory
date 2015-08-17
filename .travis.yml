@@ -3,11 +3,13 @@ rvm:
  - 2.1.0
 
 before_install:
+ - curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+ - sudo apt-get install -y nodejs
  - sudo apt-get update -qq
  - sudo apt-get install -qq npm
 
 before_script:
- - npm install -g ember-cli
+ - npm install
 
 script:
  - (cd rails && bundle exec rake)
