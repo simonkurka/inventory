@@ -3,11 +3,19 @@ language: node_js
 node_js:
  - "0.12"
 
+cache:
+ directories:
+ - rails/vendor/bundle
+
+before_install:
+ - rvm install 2.2.0
+
 install:
- - npm install -g ember-cli bower
- - (cd rails && bundle install)
+ - npm install ember-cli bower
  - (cd ember && npm install)
+ - (cd rails && bundle install --path vendor/bundle)
 
 script:
- - (cd rails && bundle exec rake)
  - (cd ember && npm test)
+ - (cd rails && bundle exec rake)
+
