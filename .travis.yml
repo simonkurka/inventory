@@ -5,8 +5,9 @@ rvm:
 before_install:
  - sudo apt-get update -qq
  - sudo apt-get install -qq npm
- - sudo npm install -g npm
- - sudo npm install -g ember-cli
+
+before_script:
+ - npm install -g ember-cli
 
 script:
  - rails/bundle exec rake
