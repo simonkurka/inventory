@@ -1,18 +1,8 @@
-language: ruby
+language: node_js
 
-rvm:
- - 2.1.0
-
-before_install:
- - curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -
- - sudo apt-get install -y nodejs
-
-before_script:
- - npm install -g ember-cli
- - (cd rails && bundle install)
- - (cd ember && npm install)
- - (cd ember && bower install)
+node_js:
+ - "0.12"
 
 script:
  - (cd rails && bundle exec rake)
- - (cd ember && ember test)
+ - (cd ember && npm test)
