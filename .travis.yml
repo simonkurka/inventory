@@ -5,8 +5,7 @@ rvm:
 
 before_install:
  - curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -
- - sudo apt-get update -qq
- - sudo apt-get install -qq npm nodejs
+ - sudo apt-get install -qq nodejs
 
 before_script:
  - npm install -g ember-cli
