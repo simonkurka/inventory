@@ -11,6 +11,7 @@ before_script:
  - npm install -g ember-cli
  - (cd rails && bundle install)
  - (cd ember && npm install)
+ - (cd ember && bower install)
 
 script:
  - (cd rails && bundle exec rake)
