@@ -1,6 +1,10 @@
 language: ruby
+
 rvm:
  - 2.1.0
+
+node_js:
+ - "0.12"
 
 before_install:
  - sudo apt-get update -qq
@@ -10,5 +14,7 @@ before_script:
  - npm install -g ember-cli
 
 script:
+ - (cd rails && bundle install)
  - (cd rails && bundle exec rake)
+ - (cd ember && npm install)
  - (cd ember && ember test)
