@@ -13,7 +13,6 @@ before_install:
  - rvm install 2.2.0
 
 install:
- - npm install ember-cli bower
  - (cd ember && npm install)
  - (cd ember && bower install)
  - (cd rails && bundle install --path vendor/bundle)
