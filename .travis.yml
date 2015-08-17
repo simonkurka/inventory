@@ -12,5 +12,5 @@ before_script:
  - (cd ember && npm install)
 
 script:
- - (cd rails && bundle exec rake)
+ - (cd rails && bundle install && bundle exec rake)
  - (cd ember && ember test)
