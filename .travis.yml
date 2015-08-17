@@ -5,6 +5,8 @@ node_js:
 
 cache:
  directories:
+ - ember/node_modules
+ - ember/bower_components
  - rails/vendor/bundle
 
 before_install:
@@ -13,6 +15,7 @@ before_install:
 install:
  - npm install ember-cli bower
  - (cd ember && npm install)
+ - (cd ember && bower install)
  - (cd rails && bundle install --path vendor/bundle)
 
 script:
