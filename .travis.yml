@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-	- 2.1.0
+ - 2.1.0
 
 before_install:
-	- sudo apt-get update -qq
-	- sudo apt-get install -qq npm
-	- sudo npm install -g ember-cli
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq npm
+ - sudo npm install -g ember-cli
 
 script:
-	- rails/bundle exec rake
-	- ember/ember test
+ - rails/bundle exec rake
+ - ember/ember test
