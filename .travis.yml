@@ -9,7 +9,7 @@ before_install:
 # - sudo apt-get install -qq npm
 
 before_script:
- - npm install
+ - (cd ember && npm install)
 
 script:
  - (cd rails && bundle exec rake)
