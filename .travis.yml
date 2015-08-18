@@ -20,4 +20,3 @@ install:
 script:
  - (cd ember && npm test)
  - (cd rails && bundle exec rake)
-
