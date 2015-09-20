@@ -14,10 +14,11 @@ before_install:
 
 install:
  - (cd ember && npm install)
- - (cd ember && bower install)
  - (cd rails && bundle install --path vendor/bundle)
 
 script:
  - (cd ember && npm test)
  - (cd rails && bundle exec rake)
 
+after_script:
+ - (cd ember && codeclimate-test-reporter < lcov.info)
